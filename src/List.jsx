@@ -1,16 +1,26 @@
 import React, {useState} from 'react';
+import './index.css'
 
 function List() { 
-    const [tasks, setTasks] = useState(["Lettuce"]);
+    const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
+    const [newQuantity, setNewQuantity] = useState("");
 
     function inputChange(event){
         setNewTask(event.target.value);
     }
+    function quantityChange(event){
+        setNewQuantity(event.target.value);
+    }
     function addToList(){
-        if (newTask.trim() !== ''){
-        setTasks(t => [...t, newTask]);
+        if (isNaN(Number(newQuantity))) {
+            alert("Quantity must be a number");
+            return;
+        }
+        if (newTask.trim() !== '' && newQuantity.trim() !== '' ){
+        setTasks(t => [...t, {name: newTask.substring(0,1).toUpperCase() + newTask.substring(1, newTask.length), quantity: newQuantity}]);
         setNewTask("");
+        setNewQuantity("");
         }
     }
     function removeFromList(index){
@@ -33,12 +43,16 @@ function List() {
     }
 return (
     <div className='list'>
-        <h1 className='title'>List by </h1>
+        <h1 className='title'>Grocery List by </h1>
         <h1 className='me'>Varun Saxena</h1>
         <div className='inputBar'>
-            <input
+            <input className='itemBar'
                 type = 'text' placeholder='Enter an item...' value={newTask}
                 onChange={inputChange}
+            />
+            <input className='quantBar'
+                type = 'text' placeholder='#..' value={newQuantity}
+                onChange={quantityChange}
             />
             <button className='addTask' onClick = {() => addToList()}>Add item</button>
         </div>
@@ -46,7 +60,12 @@ return (
         <ol className='box'>
             {tasks.map((task, index) =>
                 <li key={index}>
-                    <span className='text'>{task}</span>
+                    <span className='text'>{task.name}</span>
+                    <div className='quantbox'>
+                        <span className='line'></span>
+                        <span className='quant'>How much: {task.quantity}</span>
+                        <span className='line'></span>
+                    </div>
                     <button className='deleteTask' onClick={() => removeFromList(index)}>Remove</button>
                     <button className='upTask' onClick={() => moveItemUp(index)}>Up</button>
                     <button className='downTask' onClick={() => moveItemDown(index)}>Down</button>

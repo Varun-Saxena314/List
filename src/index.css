@@ -56,15 +56,20 @@ button{
 .downTask:hover{
   background-color:  rgb(80, 80, 80);
 }
-input[type="text"]{
+.itemBar{
   font-size: 1.6rem;
   padding: 10px;
   border: 2px solid rgba(135, 133, 133, 0.67);
   border-radius: 5px;
   color: rgb(50, 47, 47);
 }
-ol{
-  padding: 0;
+.quantBar{
+  font-size: 1.6rem;
+  padding: 10px;
+  border: 2px solid rgba(135, 133, 133, 0.67);
+  border-radius: 5px;
+  color: rgb(50, 47, 47);
+  width: 30px;
 }
 li{
   font-size: 2rem;
@@ -74,6 +79,7 @@ li{
   border: 3px solid white;
   display: flex;
   align-items: center;
+  height: 40px; 
 }
 .text{
   flex: 1;
@@ -86,4 +92,16 @@ li{
 .box{
   padding-left: 100px;
   padding-right: 100px;
+}
+.quantbox {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.line {
+  width: 1px;
+  height:71px;
+  background-color: white;
+  margin: 0 10px;
 }
