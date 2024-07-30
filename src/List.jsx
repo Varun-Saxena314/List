@@ -25,7 +25,7 @@ function List() {
             return;
         }
         if (newTask.trim() !== '' && newQuantity.trim() !== '' ){
-        setTasks(t => [...t, {name: newTask.substring(0,1).toUpperCase() + newTask.substring(1, newTask.length), quantity: newQuantity}]);
+        setTasks(t => [...t, {name: newTask.substring(0,1).toUpperCase() + newTask.substring(1, newTask.length).toLocaleLowerCase(), quantity: newQuantity}]);
         setNewTask("");
         setNewQuantity("");
         }
@@ -48,6 +48,10 @@ function List() {
             setTasks(updatedTasks);
         }
     }
+    function removeAll(){
+        const refreshTasks = [];
+        setTasks(refreshTasks);
+    }
 return (
     <div className='list'>
         <h1 className='title'>Grocery List by </h1>
@@ -62,6 +66,7 @@ return (
                 onChange={quantityChange}
             />
             <button className='addTask' onClick = {() => addToList()}>Add item</button>
+            <button className='removeAll' onClick ={() => removeAll()}>Remove All</button>
         </div>
 
         <ol className='box'>

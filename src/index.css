@@ -56,6 +56,12 @@ button{
 .downTask:hover{
   background-color:  rgb(80, 80, 80);
 }
+.removeAll{
+  background-color: rgb(185, 10, 10);
+}
+.removeAll:hover{
+  background-color: red;
+}
 .itemBar{
   font-size: 1.6rem;
   padding: 10px;
