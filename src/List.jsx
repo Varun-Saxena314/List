@@ -25,15 +25,17 @@ function List() {
             alert("Quantity must be a number");
             return;
         }
-        const updatedTasks = tasks.map(task => {
-            if (task.name.toLowerCase() === newTask.toLowerCase()) {
+        const updatedTasks = tasks.map(t => {
+            if (t.name.toLowerCase() === newTask.toLowerCase()) {
                 dup = true;
-                return { ...task, quantity: Number(task.quantity) + Number(newQuantity) };
+                return { ...t, quantity: Number(t.quantity) + Number(newQuantity) };
             }
-            return task;
+            return t;
         });
         if (dup === true){
             setTasks(updatedTasks);
+            setNewTask("");
+            setNewQuantity("");
         }
         else if (newTask.trim() !== '' && newQuantity.trim() !== ''){
         setTasks(t => [...t, {name: newTask.substring(0,1).toUpperCase() + newTask.substring(1, newTask.length).toLocaleLowerCase(), quantity: newQuantity}]);
