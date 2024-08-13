@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import './index.css'
+import './index.css';
+import './media.css';
 
 function List() { 
     const [tasks, setTasks] = useState(() => {
@@ -67,8 +68,10 @@ function List() {
     }
 return (
     <div className='list'>
+    <div className='wholeTitle'>
         <h1 className='title'>Grocery List by </h1>
         <h1 className='me'>Varun Saxena</h1>
+        </div>
         <div className='inputBar'>
             <input className='itemBar'
                 type = 'text' placeholder='Enter an item...' value={newTask}

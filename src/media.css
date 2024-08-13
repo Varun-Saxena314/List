@@ -1,0 +1,62 @@
+@media(max-width:768px){
+    .box{
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+}
+@media(max-width:561px){
+    .box{
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .wholeTitle h1{
+        font-size: 70%;
+      }
+      .itemBar{
+        width: 450px;
+        height: 20px;
+      }
+      .quantBar{
+        height: 20px
+      }
+      .addTask, .removeAll{
+        font-size: 1rem;
+        height: 40px;
+      }
+      .deleteTask, .upTask, .downTask{
+        padding: 4px 6px;
+        font-size: .7rem;
+        margin-left: 10px;
+      }
+      .text{
+        font-size: 50%;
+      }
+      .quant{
+        font-size: 50%;
+      }
+      li{
+        height: 5px;
+      }
+      .line {
+        width: 1px;
+        height:40px;
+      }
+      
+}
+@media (max-width: 426px){
+    .itemBar{
+        width: 300px;
+        height: 10px;
+      }
+    .quantBar{
+        height: 10px;
+    }
+    .addTask, .removeAll{
+        font-size: .6rem;
+        height: 30px;
+        width: 100px;
+      }
+      .quant{
+        font-size: 30%;
+      }
+}
