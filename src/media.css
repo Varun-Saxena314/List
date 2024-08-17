@@ -14,15 +14,19 @@
       }
       .itemBar{
         width: 450px;
-        height: 20px;
+        height: 40px;
+        padding: 0;
       }
       .quantBar{
-        height: 20px
+        height: 40px;
+        padding: 0; 
       }
       .addTask, .removeAll{
-        font-size: 1rem;
         height: 40px;
+        padding: 5; 
+        font-size: 75%;
       }
+      
       .deleteTask, .upTask, .downTask{
         padding: 4px 6px;
         font-size: .7rem;
@@ -44,18 +48,20 @@
       
 }
 @media (max-width: 426px){
-    .itemBar{
-        width: 300px;
-        height: 10px;
-      }
-    .quantBar{
-        height: 10px;
-    }
-    .addTask, .removeAll{
-        font-size: .6rem;
-        height: 40px;
-        width: 100px;
-      }
+  .itemBar{
+    width: 300px;
+    height: 30px;
+    padding: 0;
+  }
+  .quantBar{
+    height: 30px;
+    padding: 0; 
+  }
+  .addTask, .removeAll{
+    height: 30px;
+    padding: 0; 
+    font-size: 75%;
+  }
       .quant{
         font-size: 30%;
       }
